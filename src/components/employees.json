@@ -3,45 +3,45 @@
     {
     "gender": "female",
     "name": {
-    "title": "Miss",
-    "first": "Julia",
-    "last": "Brown"
+        "title": "Miss",
+        "first": "Julia",
+        "last": "Brown"
     },
-    "location": {
-    "street": {
-    "number": 1000,
-    "name": "Alfred St"
-    },
-    "city": "Flatrock",
-    "state": "Nunavut",
-    "country": "Canada",
-    "postcode": "C6W 5V8",
-    "coordinates": {
-    "latitude": "-58.4162",
-    "longitude": "134.1806"
-    },
-    "timezone": {
-    "offset": "-2:00",
-    "description": "Mid-Atlantic"
-    }
-    },
+        "location": {
+            "street": {
+                "number": 1000,
+                "name": "Alfred St"
+            },
+            "city": "Flatrock",
+            "state": "Nunavut",
+            "country": "Canada",
+            "postcode": "C6W 5V8",
+            "coordinates": {
+                "latitude": "-58.4162",
+                "longitude": "134.1806"
+            },
+            "timezone": {
+                "offset": "-2:00",
+                "description": "Mid-Atlantic"
+            }
+        },
     "email": "julia.brown@example.com",
     "login": {
-    "uuid": "92161158-db9a-4811-aa67-854671540f03",
-    "username": "lazyleopard427",
-    "password": "georgie",
-    "salt": "TKOHhgkO",
-    "md5": "5a12a0b7a7321702d0dcad1326fc1ecc",
-    "sha1": "d9387208a0b0ede37e6cb220be6d7954bd88c15d",
-    "sha256": "212f550b57cadc1910d63ac30c96a6db85745bc1ac5c5844b380b3511b4b317a"
+        "uuid": "92161158-db9a-4811-aa67-854671540f03",
+        "username": "lazyleopard427",
+        "password": "georgie",
+        "salt": "TKOHhgkO",
+        "md5": "5a12a0b7a7321702d0dcad1326fc1ecc",
+        "sha1": "d9387208a0b0ede37e6cb220be6d7954bd88c15d",
+        "sha256": "212f550b57cadc1910d63ac30c96a6db85745bc1ac5c5844b380b3511b4b317a"
     },
     "dob": {
-    "date": "1960-07-18T16:20:57.966Z",
-    "age": 61
+        "date": "1960-07-18T16:20:57.966Z",
+        "age": 61
     },
     "registered": {
-    "date": "2009-06-29T13:39:38.769Z",
-    "age": 12
+        "date": "2009-06-29T13:39:38.769Z",
+        "age": 12
     },
     "phone": "033-090-2449",
     "cell": "079-162-3341",
