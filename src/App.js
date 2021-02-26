@@ -1,6 +1,6 @@
-import React from "react"
-import Header from "./components/Header"
-import Body from "./components/Body"
+import React from "react";
+import Header from "./components/Header";
+import Body from "./components/Body";
 import Card from "./components/Card";
 import employeesJSON from "./components/employees.json"
 
@@ -17,7 +17,7 @@ class App extends React.Component{
       return (
         <div className="container">
           <Header />
-          <Body/>
+          <Body>
           {this.state.employees.map((employee, index) => {
             return(
               <Card
@@ -27,6 +27,7 @@ class App extends React.Component{
               />
             )
           })}
+          </Body>
         </div>
       );
     }
