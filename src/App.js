@@ -47,8 +47,23 @@ searchEmployees = (boop)=>{
   this.setState({
     employees:filteredList
   })
-
 }
+
+sortEmployees = () =>{
+  // console.log("Sorting")
+  const employeeList = this.state.employees
+  const sortedList = employeeList.sort((a,b) =>{
+    if (a.name.first  < b.name.first) { return -1}
+    if (a.name.first  > b.name.first) { return 1}
+    return 0
+  })
+    // console.log(sortedList)
+  this.setState({
+    employees:sortedList
+  })
+  
+}
+
 
   populateEmployees = () => {
     API.search()
@@ -61,11 +76,14 @@ searchEmployees = (boop)=>{
   }
 
 
+
   render(){
       return (
         <div className="container">
           <Header/>
-          <Button/>
+          <Button
+            sortEmployeesProp = {this.sortEmployees}
+          />
           <Search
             handleInputChangeProp = {this.handleInputChange}
             handleSearchClickProp = {this.handleSearchClick}

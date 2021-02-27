@@ -12,7 +12,7 @@ function Search(props) {
                     <input 
                     type="text" 
                     className="form-control" id="formGroupExampleInput" placeholder="Enter their first name"
-                    ref = {textInput}
+                    // ref = {textInput}
                     onChange = {props.handleInputChangeProp}
                     />
                     <button type="button" className="btn btn-primary" onClick={props.handleSearchClickProp}> search </button>
