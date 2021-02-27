@@ -11,24 +11,24 @@ function Card(props) {
                     alt={props.name.first}
                 />
                 <div className="card-body">
-                    <h5 className="card-title">Name: 
-                        {props.name.first} 
-                        {props.name.last}
+                    <h5 className="card-title">Name:  
+                        {" " + props.name.first + " " + props.name.last} 
+                        {/* {props.name.last} */}
                     </h5>
                     <h6 className="card-subtitle mb-2 text-muted">Branch: 
-                        {props.location.city}
+                        {" " + props.location.city}
                     </h6>
                     <p className="card-text">Email: 
-                        {props.email}
+                        {" " + props.email}
                     </p>
                     <p className="card-text">Phone: 
-                        {props.phone}
+                        {" " + props.phone}
                     </p>
                     <p className="card-text">City: 
-                        {props.location.city}
+                        {" " + props.location.city}
                     </p>
                     <p className="card-text">Country: 
-                        {props.location.country}
+                        {" " + props.location.country}
                     </p>
 
                 </div>

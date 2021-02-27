@@ -4,11 +4,28 @@ export default function Button(props) {
     // console.log("Button")
     return (
         <div>
-            <button 
-                type="button" 
-                className="btn btn-primary btn-lg"
-                onClick = {props.sortEmployeesProp}
-                >Sort Alphabetically</button>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button 
+                            type="button" 
+                            className="btn btn-primary btn-lg"
+                            onClick = {props.sortEmployeesFirstNameProp}
+                            >Sort By First Name
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button 
+                            type="button" 
+                            className="btn btn-primary btn-lg"
+                            onClick = {props.sortEmployeesLastNameProp}
+                            >Sort By Last Name
+                        </button>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

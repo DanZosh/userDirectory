@@ -6,7 +6,7 @@ import employeesJSON from "./components/employees.json";
 import API from "../src/utils/API"
 import Search from "./components/Search";
 import Button from "./components/Button";
-let textInput = React.createRef()
+
 
 const employees = employeesJSON.results
 // console.log(employees)
@@ -49,12 +49,26 @@ searchEmployees = (boop)=>{
   })
 }
 
-sortEmployees = () =>{
+sortEmployeesFirstName = () =>{
   // console.log("Sorting")
   const employeeList = this.state.employees
   const sortedList = employeeList.sort((a,b) =>{
     if (a.name.first  < b.name.first) { return -1}
     if (a.name.first  > b.name.first) { return 1}
+    return 0
+  })
+    // console.log(sortedList)
+  this.setState({
+    employees:sortedList
+  })
+  
+}
+sortEmployeesLastName = () =>{
+  // console.log("Sorting")
+  const employeeList = this.state.employees
+  const sortedList = employeeList.sort((a,b) =>{
+    if (a.name.last  < b.name.last) { return -1}
+    if (a.name.last  > b.name.last) { return 1}
     return 0
   })
     // console.log(sortedList)
@@ -82,7 +96,8 @@ sortEmployees = () =>{
         <div className="container">
           <Header/>
           <Button
-            sortEmployeesProp = {this.sortEmployees}
+            sortEmployeesFirstNameProp = {this.sortEmployeesFirstName}
+            sortEmployeesLastNameProp = {this.sortEmployeesLastName}
           />
           <Search
             handleInputChangeProp = {this.handleInputChange}
