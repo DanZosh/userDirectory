@@ -4,6 +4,9 @@ import Body from "./components/Body";
 import Card from "./components/Card";
 import employeesJSON from "./components/employees.json";
 import API from "../src/utils/API"
+import Search from "./components/Search";
+import Button from "./components/Button";
+let textInput = React.createRef()
 
 const employees = employeesJSON.results
 // console.log(employees)
@@ -12,12 +15,27 @@ class App extends React.Component{
 
   state={
     // employees:employees
+    searchedName: "",
     employees:[]
   }
 
   componentDidMount(){
     this.populateEmployees()
   }
+
+  handleInputChange = event =>{
+    // const name = event.target.name
+    //   console.log("name: ",name)
+    //USE THE LINE BELOW FOR EVENTS ASSOCIATED WITH INPUT CHANGE
+    const value = event.target.value
+    //USE THE LINE BELOW TO GET VALUE OF INPUT FIELD WITH BUTTON
+    // const value = textInput.current.value
+      console.log("value: ",value)
+    this.setState({
+      searchedName:value
+    })
+}
+
 
   populateEmployees = () => {
     API.search()
@@ -33,7 +51,11 @@ class App extends React.Component{
   render(){
       return (
         <div className="container">
-          <Header />
+          <Header/>
+          <Button/>
+          <Search
+            handleInputChangeProp = {this.handleInputChange}
+          />
           <Body>
           {this.state.employees.map((employee, index) => {
             return(
