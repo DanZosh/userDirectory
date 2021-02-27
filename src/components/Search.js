@@ -2,7 +2,7 @@ import React from 'react'
 let textInput = React.createRef()
 
 function Search(props) {
-    console.log("Search")
+    // console.log("Search")
 
     return (
         <div>
@@ -11,11 +11,11 @@ function Search(props) {
                     <label htmlFor="formGroupExampleInput"></label>
                     <input 
                     type="text" 
-                    className="form-control" id="formGroupExampleInput" placeholder="Find Someone"
+                    className="form-control" id="formGroupExampleInput" placeholder="Enter their first name"
                     ref = {textInput}
                     onChange = {props.handleInputChangeProp}
                     />
-                    {/* <button type="button" class="btn btn-primary" onClick={props.handleInputChangeProp}> search </button> */}
+                    <button type="button" className="btn btn-primary" onClick={props.handleSearchClickProp}> search </button>
                     
                 </div>
             </form>

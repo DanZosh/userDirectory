@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header(){
-    console.log("Header")
+    // console.log("Header")
     return(
         <div className="jumbotron">
             <h1 className="display-4">Your Employees</h1>

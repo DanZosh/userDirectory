@@ -2,6 +2,7 @@ import React from 'react'
 // import "./style.css";
 
 function Card(props) {
+    // console.log("Card")
     return (
         <div>
             <div className="card" style={{width: "18rem"}}>

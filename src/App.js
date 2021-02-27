@@ -24,18 +24,31 @@ class App extends React.Component{
   }
 
   handleInputChange = event =>{
-    // const name = event.target.name
-    //   console.log("name: ",name)
-    //USE THE LINE BELOW FOR EVENTS ASSOCIATED WITH INPUT CHANGE
     const value = event.target.value
-    //USE THE LINE BELOW TO GET VALUE OF INPUT FIELD WITH BUTTON
-    // const value = textInput.current.value
       console.log("value: ",value)
     this.setState({
       searchedName:value
     })
+    console.log(this.state.searchedName)
 }
 
+handleSearchClick = event => {
+  event.preventDefault();
+  this.searchEmployees(this.state.searchedName);
+};
+
+searchEmployees = (boop)=>{
+  //search through the current list of employees for those with the first name boop
+  console.log("boop: ", boop)
+  const employeeList = this.state.employees
+    console.log("employeeList", employeeList)
+  const filteredList = employeeList.filter(employee => employee.name.first === boop)
+    console.log("filteredList", filteredList)
+  this.setState({
+    employees:filteredList
+  })
+
+}
 
   populateEmployees = () => {
     API.search()
@@ -55,6 +68,7 @@ class App extends React.Component{
           <Button/>
           <Search
             handleInputChangeProp = {this.handleInputChange}
+            handleSearchClickProp = {this.handleSearchClick}
           />
           <Body>
           {this.state.employees.map((employee, index) => {
