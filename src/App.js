@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Card from "./components/Card";
-import employeesJSON from "./components/employees.json";
+// import employeesJSON from "./components/employees.json";
 import API from "../src/utils/API"
 import Search from "./components/Search";
 import Button from "./components/Button";

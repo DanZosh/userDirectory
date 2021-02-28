@@ -1,5 +1,4 @@
 import React from 'react'
-// import "./style.css";
 
 function Card(props) {
     // console.log("Card")
@@ -13,7 +12,6 @@ function Card(props) {
                 <div className="card-body">
                     <h5 className="card-title">Name:  
                         {" " + props.name.first + " " + props.name.last} 
-                        {/* {props.name.last} */}
                     </h5>
                     <h6 className="card-subtitle mb-2 text-muted">Branch: 
                         {" " + props.location.city}
