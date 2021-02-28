@@ -53,7 +53,7 @@ This application is covered under the following license: MIT_License.
 ## Links:
 See below for a list of helpful links:
 
-* heroku:<br> https://userdirectoryhmwk19.herokuapp.com/
+* heroku:<br> https://damp-beyond-35763.herokuapp.com/
 * github:<br> https://github.com/DanZosh/userDirectory
 
 
