@@ -23,6 +23,12 @@ export default function Button(props) {
                         </button>
                     </div>
                     <div className="col">
+                        <button 
+                            type="button" 
+                            className="btn btn-primary btn-lg"
+                            onClick = {props.sortEmployeesLastNameProp}
+                            >Unsort
+                        </button>
                     </div>
                 </div>
             </div>

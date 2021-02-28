@@ -8,8 +8,9 @@ import Search from "./components/Search";
 import Button from "./components/Button";
 
 
-const employees = employeesJSON.results
+// const employees = employeesJSON.results
 // console.log(employees)
+let employeePlaceholderList 
 
 class App extends React.Component{
 
@@ -39,6 +40,9 @@ class App extends React.Component{
   handleClearClick = event => {
     event.preventDefault();
     console.log("clear")
+    this.setState({
+      employees:employeePlaceholderList
+    })
   };
 
   
@@ -94,6 +98,8 @@ class App extends React.Component{
         .then(res => {
           console.log("Results:", res.data.results);
           this.setState({employees:res.data.results})
+          employeePlaceholderList = res.data.results
+            console.log("employeePlaceholderList: ", employeePlaceholderList)
         }
         )
         .catch(err => console.log(err))
