@@ -1,4 +1,6 @@
 import React from 'react'
+import "./style.css";
+
 let textInput = React.createRef()
 
 function Search(props) {
@@ -11,11 +13,24 @@ function Search(props) {
                     <label htmlFor="formGroupExampleInput"></label>
                     <input 
                     type="text" 
+                    style={{width : "77%"}}
                     className="form-control" id="formGroupExampleInput" placeholder="Enter their first or last name"
                     onChange = {props.handleInputChangeProp}
                     />
-                    <button type="button" className="btn btn-primary" onClick={props.handleSearchClickProp}> search </button>
-                    <button type="button" className="btn btn-primary" onClick={props.handleClearClickProp}> clear </button>
+                    <button 
+                        style={{marginRight : 3}}
+                        type="button" 
+                        className="btn btn-primary" 
+                        onClick={props.handleSearchClickProp}
+                    > search 
+                    </button>
+
+                    <button 
+                        type="button" 
+                        className="btn btn-primary" 
+                        onClick={props.handleClearClickProp}
+                    > clear 
+                    </button>
                     
                 </div>
             </form>

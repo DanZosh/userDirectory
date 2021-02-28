@@ -10,7 +10,8 @@ import Button from "./components/Button";
 
 // const employees = employeesJSON.results
 // console.log(employees)
-let employeePlaceholderList 
+// let employeePlaceholderList 
+let employeePlaceholderList =[]
 
 class App extends React.Component{
 
@@ -40,9 +41,11 @@ class App extends React.Component{
   handleClearClick = event => {
     event.preventDefault();
     console.log("clear")
+    console.log("employeePlaceholderList: ", employeePlaceholderList)
     this.setState({
       employees:employeePlaceholderList
     })
+
   };
 
   
@@ -76,7 +79,7 @@ class App extends React.Component{
     this.setState({
       employees:sortedList
     })
-    
+    console.log("employeePlaceholderList: ", employeePlaceholderList)
   }
   sortEmployeesLastName = () =>{
     // console.log("Sorting")
@@ -90,15 +93,20 @@ class App extends React.Component{
     this.setState({
       employees:sortedList
     })
-    
+    console.log("employeePlaceholderList: ", employeePlaceholderList)
   }
 
   populateEmployees = () => {
       API.search()
         .then(res => {
-          console.log("Results:", res.data.results);
+          console.log("API Results:", res.data.results);
           this.setState({employees:res.data.results})
-          employeePlaceholderList = res.data.results
+          // employeePlaceholderList = res.data.results
+          res.data.results.forEach(item =>{
+            employeePlaceholderList.push(item)
+          })
+
+
             console.log("employeePlaceholderList: ", employeePlaceholderList)
         }
         )
@@ -110,16 +118,18 @@ class App extends React.Component{
   render(){
       return (
         <div className="container">
-          <Header/>
+          <Header>
           <Button
             sortEmployeesFirstNameProp = {this.sortEmployeesFirstName}
             sortEmployeesLastNameProp = {this.sortEmployeesLastName}
+            handleClearClickProp = {this.handleClearClick}
           />
           <Search
             handleInputChangeProp = {this.handleInputChange}
             handleSearchClickProp = {this.handleSearchClick}
             handleClearClickProp = {this.handleClearClick}
           />
+          </Header>
           <Body>
           {this.state.employees.map((employee, index) => {
             return(
