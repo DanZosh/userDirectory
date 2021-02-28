@@ -4,9 +4,9 @@ export default function Button(props) {
     // console.log("Button")
     return (
         <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+            <div className="container">
+                <div className="row">
+                    <div className="col">
                         <button 
                             type="button" 
                             className="btn btn-primary btn-lg"
@@ -14,7 +14,7 @@ export default function Button(props) {
                             >Sort By First Name
                         </button>
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <button 
                             type="button" 
                             className="btn btn-primary btn-lg"
@@ -22,7 +22,7 @@ export default function Button(props) {
                             >Sort By Last Name
                         </button>
                     </div>
-                    <div class="col">
+                    <div className="col">
                     </div>
                 </div>
             </div>

@@ -32,61 +32,71 @@ class App extends React.Component{
     console.log(this.state.searchedName)
 }
 
-handleSearchClick = event => {
-  event.preventDefault();
-  this.searchEmployees(this.state.searchedName);
-};
+  handleSearchClick = event => {
+    event.preventDefault();
+    this.searchEmployeesFirstLast(this.state.searchedName);
+  };
+  handleClearClick = event => {
+    event.preventDefault();
+    console.log("clear")
+  };
 
-searchEmployees = (boop)=>{
-  //search through the current list of employees for those with the first name boop
-  console.log("boop: ", boop)
-  const employeeList = this.state.employees
-    console.log("employeeList", employeeList)
-  const filteredList = employeeList.filter(employee => employee.name.first === boop)
-    console.log("filteredList", filteredList)
-  this.setState({
-    employees:filteredList
-  })
-}
-
-sortEmployeesFirstName = () =>{
-  // console.log("Sorting")
-  const employeeList = this.state.employees
-  const sortedList = employeeList.sort((a,b) =>{
-    if (a.name.first  < b.name.first) { return -1}
-    if (a.name.first  > b.name.first) { return 1}
-    return 0
-  })
-    // console.log(sortedList)
-  this.setState({
-    employees:sortedList
-  })
   
-}
-sortEmployeesLastName = () =>{
-  // console.log("Sorting")
-  const employeeList = this.state.employees
-  const sortedList = employeeList.sort((a,b) =>{
-    if (a.name.last  < b.name.last) { return -1}
-    if (a.name.last  > b.name.last) { return 1}
-    return 0
-  })
-    // console.log(sortedList)
-  this.setState({
-    employees:sortedList
-  })
-  
-}
+  searchEmployeesFirstLast = (boop)=>{
+    const employeeList = this.state.employees
+    const filteredListFirstName = employeeList.filter(employee => employee.name.first === boop)
+      console.log("filteredListFirstName", filteredListFirstName)
+    const filteredListLastName = employeeList.filter(employee => employee.name.last === boop)
+      console.log("filteredListLastName", filteredListLastName)
+    
+    if(filteredListFirstName.length >0){
+      this.setState({
+        employees:filteredListFirstName
+      })
+    } 
+    else if(filteredListLastName.length >0){
+      this.setState({
+        employees:filteredListLastName
+      })
+    }
+    else return
+  }
 
+  sortEmployeesFirstName = () =>{
+    const employeeList = this.state.employees
+    const sortedList = employeeList.sort((a,b) =>{
+      if (a.name.first  < b.name.first) { return -1}
+      if (a.name.first  > b.name.first) { return 1}
+      return 0
+    })
+    this.setState({
+      employees:sortedList
+    })
+    
+  }
+  sortEmployeesLastName = () =>{
+    // console.log("Sorting")
+    const employeeList = this.state.employees
+    const sortedList = employeeList.sort((a,b) =>{
+      if (a.name.last  < b.name.last) { return -1}
+      if (a.name.last  > b.name.last) { return 1}
+      return 0
+    })
+      // console.log(sortedList)
+    this.setState({
+      employees:sortedList
+    })
+    
+  }
 
   populateEmployees = () => {
-    API.search()
-      .then(res => {
-        console.log("Results:", res.data.results);
-        this.setState({employees:res.data.results})
-      }
-      )
-      .catch(err => console.log(err))
+      API.search()
+        .then(res => {
+          console.log("Results:", res.data.results);
+          this.setState({employees:res.data.results})
+        }
+        )
+        .catch(err => console.log(err))
   }
 
 
@@ -102,6 +112,7 @@ sortEmployeesLastName = () =>{
           <Search
             handleInputChangeProp = {this.handleInputChange}
             handleSearchClickProp = {this.handleSearchClick}
+            handleClearClickProp = {this.handleClearClick}
           />
           <Body>
           {this.state.employees.map((employee, index) => {
